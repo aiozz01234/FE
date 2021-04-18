@@ -33,7 +33,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:2000/",
+  "proxy": "https://walletbe.herokuapp.com/",
   "main": "index.js",
   "devDependencies": {},
   "author": "----",
