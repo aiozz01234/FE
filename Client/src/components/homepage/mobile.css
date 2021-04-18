@@ -1,0 +1,33 @@
+@media screen and (max-width: 425px){
+    div.grid{
+       
+        grid-template-columns: repeat(1, 1fr);
+       
+    }
+    section.homepage .text{
+       
+        margin: 15px 30px;
+    }
+
+    section.homepage .text p{
+        color: #8f9bb3;
+        line-height: 1.3em;
+        opacity: 1;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    
+    section.homepage .text{
+       
+        margin: 10px 30px;
+    }
+
+    section.homepage .text p{
+        color: #8f9bb3;
+        line-height: 1.3em;
+        opacity: 1;
+        font-size: 15px;
+    }
+}

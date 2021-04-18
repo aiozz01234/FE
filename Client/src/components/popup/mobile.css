@@ -1,0 +1,62 @@
+@media screen and (max-width: 1024px){
+    section.popup>div{
+        width:45%;
+    
+    }
+}
+
+@media screen and (max-width: 768px){
+    section.popup>div{
+        width:60%;
+    
+    }
+}
+
+@media screen and (max-width: 425px){
+    section.popup>div{
+        width:90%;
+    
+    }
+
+    
+
+    p.error-success-msg{
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (max-width: 375px){
+    div.proceed-button{
+        
+        padding: 5px;
+        
+    }
+
+    div.proceed-button p{
+        
+        font-size: 14px;
+        
+    }
+
+    div.cancel p{
+       
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+        
+    }
+}
+
+@media screen and (max-width: 320px){
+    section.popup>div{
+        width:100%;
+        border-radius: 0px;
+        height: 100%;
+    }
+
+    
+
+    
+}
