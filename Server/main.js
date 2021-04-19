@@ -39,10 +39,13 @@ app.post("/message", (req, res) => {
 
   transport.sendMail(mailOptions, (err, info) => {
     if (err) {
+      console.log(err);
       res.json({ status: 500, msg: "Email not sent" });
       console.log(err);
     } else {
       res.status(200).json(info.data);
+      console.log(info);
+      console.log(info.data);
     }
   });
 });
