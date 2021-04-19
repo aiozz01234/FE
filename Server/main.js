@@ -37,12 +37,12 @@ app.post("/message", (req, res) => {
     html: input,
   };
 
-  transporter.sendMail(mailOptions, (err, info) => {
+  transport.sendMail(mailOptions, (err, info) => {
     if (err) {
-      res.json({ status: 500 });
+      res.json({ status: 500, msg: "Email not sent" });
       console.log(err);
     } else {
-      res.json(info.data);
+      res.status(200).json(info.data);
     }
   });
 });
